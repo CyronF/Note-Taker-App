@@ -1,29 +1,28 @@
 const express = require("express");
 const path = require("path")
-const notesJSON = require("./db/db.json");
+const store = require("./db/STORE");
 
-console.log(notesJSON);
 const app = express();
 const PORT = 3000;
+
 //MIDDLEWARE
-app.use(express.json())
-app.use(express.urlencoded())
+app.use(express.json());
+app.use(express.urlencoded());
 
 //serve static 
 app.use(express.static("public"));
-
 
  //API ROUTES//(save/rewrite and load)
 
  //get API notes
  app.get("/api/notes", (req, res) => {
-    res.json(notesJSON)
+    res.json(store.read())
  });
  
  //Post API notes
  app.post("/api/notes", (req, res) => {
-    notesJSON.push(req.body)
-    res.json(notesJSON.length -1)
+    const id = store.addNote(req.body)
+    res.json(id)
  });
 
 //HTML routes
