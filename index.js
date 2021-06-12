@@ -5,22 +5,30 @@ const notesJSON = require("./db/db.json");
 console.log(notesJSON);
 const app = express();
 const PORT = 3000;
+//MIDDLEWARE
+app.use(express.json())
+app.use(express.urlencoded())
 
 //serve static 
 app.use(express.static("public"));
-  //json middleware
- //url encoded middleware
 
- //API Routes//(save/rewrite and load)
- app.get("/api/notes", (req, res) => {
-     console.log("/api/notes");
-     res.json(notesJSON)
- });
+
+ //API ROUTES//(save/rewrite and load)
+
  //get API notes
+ app.get("/api/notes", (req, res) => {
+    res.json(notesJSON)
+ });
+ 
  //Post API notes
+ app.post("/api/notes", (req, res) => {
+    notesJSON.push(req.body)
+    res.json(notesJSON.length -1)
+ });
 
-//html routes
-app.get("/notes", (req, res)=> res.sendFile(path.join(__dirname, "public/notes.html")))
+//HTML routes
+app.get("/notes", (req, res)=> res.sendFile(path.join(__dirname, "public/notes.html")));
+app.get("*", (req, res)=> res.send("404"));
 
 //Start listening 
 app.listen(PORT, ()=> console.log("server running on http://localhost:3000"));

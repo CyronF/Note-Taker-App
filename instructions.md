@@ -6,7 +6,6 @@ Your assignment is to modify starter code to create an application called Note T
 
 The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
 
-
 ## User Story
 
 ```
@@ -14,7 +13,6 @@ AS A small business owner
 I WANT to be able to write and save notes
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ```
-
 
 ## Acceptance Criteria
 
@@ -34,15 +32,13 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
 
-
 ## Mock-Up
 
-The following images show the web application's appearance and functionality: 
+The following images show the web application's appearance and functionality:
 
 ![Existing notes are listed in the left-hand column with empty fields on the right-hand side for the new note’s title and text.](./Assets/11-express-homework-demo-01.png)
 
 ![Note titled “Balance accounts” reads, “Balance account books by end of day Monday,” with other notes listed on the left.](./Assets/11-express-homework-demo-02.png)
-
 
 ## Getting Started
 
@@ -60,18 +56,15 @@ The following API routes should be created:
 
 * `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into `npm` packages that could do this for you).
 
-
 ## Bonus
 
 You haven’t learned how to handle DELETE requests, but this application has that functionality in the front end. As a bonus, see if you can add the DELETE route to the application using the following guideline:
 
 * `DELETE /api/notes/:id` should receive a query parameter containing the id of a note to delete. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
 
-
 ## Grading Requirements
 
-This homework is graded based on the following criteria: 
-
+This homework is graded based on the following criteria:
 
 ### Technical Acceptance Criteria: 40%
 
@@ -83,7 +76,6 @@ This homework is graded based on the following criteria:
 
   * Application must be deployed to Heroku.
 
-
 ### Deployment: 36%
 
 * Application deployed at live URL.
@@ -94,11 +86,9 @@ This homework is graded based on the following criteria:
 
 * GitHub repository contains application code.
 
-
 ### Application Quality: 11%
 
 * Application console is free of errors.
-
 
 ### Repository Quality: 13%
 
@@ -112,11 +102,9 @@ This homework is graded based on the following criteria:
 
 * Repository contains quality README file with description, screenshot, and link to deployed application.
 
-
 ### Bonus: +10 Points
 
 * Application allows users to delete notes.
-
 
 ## Review
 
